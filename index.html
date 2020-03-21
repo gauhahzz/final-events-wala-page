@@ -1,0 +1,97 @@
+<html>
+
+<head>
+    <link href="event%20main.css" rel="stylesheet" />
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="we-do">
+        <nav class="nav">
+            <a href="#" class="nav-item is-active" active-color="orange">Home</a>
+            <a href="#" class="nav-item" active-color="green">About</a>
+            <a href="#" class="nav-item" active-color="blue">Events</a>
+            <a href="#" class="nav-item" active-color="rebeccapurple">Contact</a>
+            <span class="nav-indicator"></span>
+        </nav>
+        <div class="maincontent">
+            <div class="SHIKSHA">
+                <ul>
+                    <li class="shiska1">S</li>
+                    <li class="shiska2">H</li>
+                    <li class="shiska3">I</li>
+                    <li class="shiska4">K</li>
+                    <li class="shiska5">S</li>
+                    <li class="shiska6">H</li>
+                    <li class="shiska7">A</li>
+
+
+                </ul>
+            </div>
+            <marquee><u> Upcoming Events : </u>Shikshagan is on 12 to 14 April ,2020 at NIT kurukshetra..</marquee>
+
+
+
+
+        </div>
+        
+        <div class="boxwalapart white darken-2">Our events
+            <div class="container1">
+                <div class="box11">
+                    <div class="head-img"><div class="red white-text">Art and craft workshop</div></div>
+                    <img src="3.jpg"></div>
+                <div class="box12">
+                    <div class="head-img"><div class="orange  white-text">Make a wish</div></div><img src="5.jpg"></div>
+            </div>
+            <div class="container2"><div class="head-img"><div class="green  white-text">Local trips</div></div><img src="2.jpg"></div>
+            <div class="container3">
+                <div class="box31"><div class="head-img"><div class="teal  white-text">Kavi samelan</div></div><img src="1.jpg"></div>
+                <div class="box32"><div class="head-img"><div class="orange  white-text">Science workshops</div></div><img src="4.jpg"></div>
+                <div class="box33"><div class="head-img"><div class="green white-text">Republic day </div></div><img src="6.jpg"></div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p>Copyright @2019</p>
+        <center>
+            <div class="imgcontainer">
+                <a href="#"><img src="insta.png" alt="insta"></a>
+                <a href="#"><img src="fb.png" alt="fb"></a>
+                <a href="#"><img src="gmail.png" alt="gmail"></a>
+            </div>
+        </center>
+    </div>
+
+    <script>
+        const indicator = document.querySelector('.nav-indicator');
+        const items = document.querySelectorAll('.nav-item');
+
+        function handleIndicator(el) {
+            items.forEach(item => {
+                item.classList.remove('is-active');
+                item.removeAttribute('style');
+            });
+
+            indicator.style.width = `${el.offsetWidth}px`;
+            indicator.style.left = `${el.offsetLeft}px`;
+            indicator.style.backgroundColor = el.getAttribute('active-color');
+
+            el.classList.add('is-active');
+            el.style.color = el.getAttribute('active-color');
+        }
+
+
+        items.forEach((item, index) => {
+            item.addEventListener('click', (e) => {
+                handleIndicator(e.target)
+            });
+            item.classList.contains('is-active') && handleIndicator(item);
+        });
+    </script>
+</body>
